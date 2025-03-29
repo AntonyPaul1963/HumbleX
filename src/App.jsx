@@ -99,9 +99,6 @@ const OutputPage = () => {
         case "Refresh Page":
           window.location.reload();
           break;
-        case "Set LocalStorage":
-          localStorage.setItem("key", "value");
-          break;
         case "Increase Button Size":
           setButtonSize(buttonSize + 5);
           break;
