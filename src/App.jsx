@@ -101,9 +101,6 @@ const OutputPage = () => {
         case "Set LocalStorage":
           localStorage.setItem("key", "value");
           break;
-        case "Get LocalStorage":
-          console.log(localStorage.getItem("key"));
-          break;
         case "Increase Button Size":
           setButtonSize(buttonSize + 5);
           break;
