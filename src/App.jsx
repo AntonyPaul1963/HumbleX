@@ -74,6 +74,7 @@ const OutputPage = () => {
   const [istext,setIsText] = useState(false);
   const [isImage, setIsImage] = useState(false);
   const [imageUrl, setImageUrl] = useState("");
+  const [buttonColor,setButtonColor]=useState("blue");
 
   useEffect(() => {
     const savedConfig = JSON.parse(localStorage.getItem("buttonConfig"));
@@ -112,7 +113,7 @@ const OutputPage = () => {
           console.log("User input:", response);
           break;
         case "Change Button Color":
-          document.body.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+          setButtonColor("#" + Math.floor(Math.random()*16777215).toString(16));
           break;
         case "Disable Button":
           setButtonDisabled(true);
@@ -128,7 +129,7 @@ const OutputPage = () => {
     <div style={{ display: "flex", flexDirection: "column", backgroundColor: "#0f172a", minHeight: "100vh", alignItems: "center", width: "100vw" }}>
       <h2 style={{height:"180px",backgroundColor: "#0f172a", display: "flex", alignItems: "center", padding: "0 20px",fontSize: "5rem", fontWeight: "bold"}}>Output Page</h2>
       <button
-        style={{ fontSize: `${buttonSize}px`, backgroundColor: "blue", color: "white", padding: "10px 20px", borderRadius: "5px" }}
+        style={{ fontSize: `${buttonSize}px`, backgroundColor: `${buttonColor}`, color: "white", padding: "10px 20px", borderRadius: "5px" }}
         disabled={buttonDisabled}
         onClick={handleClick}
       >
